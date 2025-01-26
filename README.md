@@ -26,7 +26,7 @@ A powerful set of utilities for enhancing the Vimwiki experience in Neovim. This
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/vimwiki-markdown-utilities.git
+git clone https://github.com/kleinpanic/vimwiki-markdown-utilities.git
 ```
 
 ### 2. Configure Neovim
