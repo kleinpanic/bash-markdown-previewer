@@ -1,0 +1,123 @@
+:root {
+    --text                   : #cdd6f4;
+    --background             : #1e1e2e;
+    --title                  : #fab387;
+    --link                   : #89b4fa;
+    --visited-link           : #a6e3a1;
+    --programming-syntax-text: #c9d1d9;
+    --wikipedia-equation-box : #eba0ac;
+    --code-background        : #24273a;
+}
+
+*, div, textarea, body, body::before, input, td, tr, p, h4, h3, h2 {
+    border-color: var(--text) !important;
+    background-color: var(--background) !important;
+    background-image: var(--text) !important;
+    color: var(--text) !important;
+}
+
+pre, pre span, code {
+    background-color: var(--code-background) !important;
+}
+
+/* wikipedia equation box */
+div[class='equation-box'] {
+    border-color: var(--wikipedia-equation-box) !important;
+}
+
+/* wikipedia article title */
+span[class='mw-page-title-main'] {
+    background-color: var(--background) !important;
+    color: var(--title) !important;
+}
+
+div > button /* Search button clicked */, input /* Text input in search field */, 
+/* View history page: */ div[id*="oo"], div[class*="oo"], div[class*="mw-widget"], div[class*="mw-echo"], span,
+/* Discussion notice pop up: */ div[id*="semiprotectedpagewarning"], li[class*="mw-logline-protect"],
+/* Programming syntax text: https://en.wikipedia.org/wiki/%22Hello,_World!%22_program#Examples */ samp,
+/* Quotes: */ blockquote > div > p {
+  color: var(--programming-syntax-text) !important;
+}
+
+/* Hyperlinks */
+a, a > span {
+  color: var(--link) !important;
+}
+
+a:visited {
+    color: var(--visited-link) !important;
+}
+
+a[class=mw-tmh-play] {
+    background-color: transparent !important;
+}
+
+/* Hyperlinks not existing */
+a[class*="new"] {
+  color: var(--link) !important;
+}
+
+/* Remove white gradient color */
+div#vector-toc.vector-toc.vector-pinnable-element::after, div#vector-page-tools.vector-page-tools.vector-pinnable-element::after, div.vector-sticky-pinned-container::after {
+  background: none !important;
+}
+
+/* Remove popup white gradient fade*/
+.mwe-popups .mwe-popups-extract[dir='ltr']::after {
+  background-image:linear-gradient(to right, rgba(13,17,23,0), #0d1117 50%) !important;
+}
+
+/* Force white line on top */
+.vector-page-toolbar {
+  border-top: 1px solid white;
+}
+
+/* Coloring icons to white */
+span[class~="vector-icon"], a[class~="vector-icon"], span[class~="oo-ui-iconElement-icon"], 
+/* Checkbox icons in preferences page: */ span[id*="mw-input-wpecho-subscriptions"],
+/* LaTeX formulas: */ img.mwe-math-fallback-image-display, img.mwe-math-fallback-image-inline {
+  background-color: transparent !important;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+/* wikipedia main logo */
+
+/* hide full header */
+
+div[class=vector-header-container] { 
+    display: none;
+}
+
+/* darken logo background */
+
+/*img[class=mw-logo-wordmark], img[class=mw-logo-tagline] {*/
+/*    background-color: transparent !important;*/
+/*    filter: invert(1);*/
+/*}*/
+
+/* just hide wikipedia text */
+
+/*span[class="mw-logo-container skin-invert"] {*/
+/*    visibility: hidden;*/
+/*}*/
+
+picture {
+    background-color: transparent !important;
+}
+
+/* stackoverflow cleanup (fix if breaking other sites) */
+header[class='s-topbar ps-fixed t0 l0 js-top-bar'], div[id=sidebar], form[id=post-form], div[class='s-topbar--container'], div[id='left-sidebar'], div[class='left-sidebar js-pinned-left-sidebar ps-relative'] {
+    display: none;
+    visibility: hidden;
+}
+
+
+div[class='quotebox pullquote centered'] {
+    border: 3px solid var(--text) !important;
+}
+
+div[class='quotebox pullquote centered'], div[class='quotebox pullquote centered'] * {
+    background-color: var(--programming-syntax-text) !important;
+    color: #202122 !important;
+}
